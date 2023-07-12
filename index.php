@@ -13,7 +13,7 @@
     <section>
         <div class="login-box">
             <form action="loginController.php" method="POST">
-                <h2>Malea Energy</h2>
+                <h2>ME</h2>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person-outline"></ion-icon>

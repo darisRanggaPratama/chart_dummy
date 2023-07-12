@@ -18,7 +18,7 @@ if (isset($_POST['submit_data'])) {
 	$hmn = $_POST['human'];
 
 	// Makes query with post data
-	$query = "UPDATE me_pst set
+	$query = "UPDATE dummy SET
 	kode='$kode', bln='$bln', gaji='$gaji', lembur='$lembur', tj_lain='$tj_lain',
 	trf='$transfer', hmn='$hmn'
 	WHERE id=$id";
@@ -27,18 +27,18 @@ if (isset($_POST['submit_data'])) {
 	// If data inserted then set success message otherwise set error message
 	// Here $database comes from "connect.php"
 	if (mysqli_query($connect, $query)) {
-		$message = '<script>alert("Data is UPDATED successfully.")';
+		$message = '<script> alert("Data(kode: ' .$kode. ' ) is UPDATED successfully.") </script>';
 	} else {
-		$message = '<script>alert("Sorry, Data is not updated.")';
+		$message = '<script> alert("Sorry, Data(kode: ' .$kode. ' ) is not updated.") </script>';
 	}
 
 	echo $message;
-	echo '<script> location.reload() </script>';
+	//echo '<script> location.reload() </script>';
 }
 
 $id = $_GET['id']; // id from url
 // Prepare the query to get the row data with rowid
-$query = "SELECT * FROM me_pst WHERE id=$id";
+$query = "SELECT * FROM dummy WHERE id=$id";
 $result = mysqli_query($connect, $query);
 $data = mysqli_fetch_array($result);// set the row in $data
 ?>

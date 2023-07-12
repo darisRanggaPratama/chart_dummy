@@ -8,7 +8,7 @@
             <select id="year1" name="year1" class="form-select">
                 <?php
                 // Array: year number
-                $year = array(2023, 2024, 2025, 2026, 2027);
+                $year = array(2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027);
 
                 // Display year
                 for ($i = 0; $i < sizeof($year); $i++) {

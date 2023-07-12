@@ -9,7 +9,7 @@ $month2 = $_GET['month2'] ?? '12';
 
 // Request column (Query)
 $query = "SELECT *
-FROM me_pst
+FROM dummy
 WHERE kode BETWEEN '$year1-$month1' AND '$year2-$month2'
 ORDER BY kode";
 

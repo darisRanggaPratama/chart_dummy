@@ -36,13 +36,13 @@ include "connect.php"; ?>
 			$id = $_GET['id']; // id from url
 
 			// Prepare the deleting query according to id
-			$query = "DELETE FROM me_pst WHERE id=$id";
+			$query = "DELETE FROM dummy WHERE id=$id";
 
 			// Run the query to delete record
 			if (mysqli_query($connect, $query)) {
-				$message = '<script>alert("Record is DELETED successfully.")</script>';
+				$message = '<script> alert("Record(id: '. $id .' ) is DELETED successfully.") </script>';
 			} else {
-				$message = '<script>alert("Sorry, Record is not deleted.")</script>';
+				$message = '<script> alert("Sorry, Record(id: '. $id .' ) is not deleted.") </script>';
 			}
 
 			echo $message;
@@ -72,7 +72,7 @@ include "connect.php"; ?>
 			<tbody>
 				<?php
 				// Makes query: SELECT ALL
-				$query = "SELECT * FROM me_pst ORDER BY kode ASC";
+				$query = "SELECT * FROM dummy ORDER BY kode ASC";
 
 				// Run the query and set query result in $query
 				// Here $database comes from "connect.php"

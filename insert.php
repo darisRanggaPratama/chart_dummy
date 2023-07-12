@@ -15,7 +15,7 @@ if (isset($_POST['submit_data'])) {
 	$hmn = $_POST['human'];
 
 	// Makes query with post data
-	$query = "INSERT INTO me_pst
+	$query = "INSERT INTO dummy
 	(kode, bln, gaji, lembur, tj_lain, trf, hmn)
 	VALUES
 	('$kode', '$bln', '$gaji', '$lembur', '$tj_lain', '$transfer', '$hmn')";
@@ -24,13 +24,13 @@ if (isset($_POST['submit_data'])) {
 	// If data inserted then set success message otherwise set error message
 	// Here $database comes from "connect.php"
 	if (mysqli_query($connect, $query)) {
-		$message = '<script>alert("Data is INSERTED successfully.")';
-	} else {
-		$message = '<script>alert("Sorry, Data is not inserted.")';
+		$message = '<script> alert("Data(kode: ' .$kode. ' ) is INSERTED successfully.") </script>';
+	} else { 
+		$message = '<script> alert("Sorry, Data(kode: ' .$kode. ' ) is not inserted.") </script>';
 	}
 
 	echo $message;
-	echo '<script> location.reload() </script>';
+	//echo '<script> location.reload() </script>';
 }
 ?>
 <!DOCTYPE html>

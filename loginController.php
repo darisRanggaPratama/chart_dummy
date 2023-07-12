@@ -10,7 +10,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Ambil data user dengan username dan password yang sesuai
-$result = mysqli_query($connect, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
+$result = mysqli_query($connect, "SELECT * FROM login WHERE username = '$username' AND password = '$password'");
 
 $cek = mysqli_num_rows($result);
 
